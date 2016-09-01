@@ -8,9 +8,11 @@ $(document).ready(function(){
 	$.post("http://challenge.code2040.org/api/register",
 	{
 		token: "d19c018fac18507f87dfe1265295cdbc"
-		github: "https://github.com/kimfievre/Code-2040"
+		github: https:\/\/github.com/kimfievre/Code2040
 	},
 	function(data){
 
 	});
+
+
 });
