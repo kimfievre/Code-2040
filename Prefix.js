@@ -1,6 +1,7 @@
-$(document).ready(function(){
-	var token = "d19c018fac18507f87dfe1265295cdbc";
-	var info = {"token": token};
+var token = "d19c018fac18507f87dfe1265295cdbc";
+var info = {"token": token};
+
+function prefix(info){
 	$.post("http://challenge.code2040.org/api/prefix", info, function(data){
 		var array = [];
 		for(var i = 0; i < data.array.length; i++){
@@ -11,5 +12,6 @@ $(document).ready(function(){
 			}
 		}
 	});
+}
 
-});
+prefix(info);

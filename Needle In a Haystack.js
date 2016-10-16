@@ -1,6 +1,7 @@
-$(document).ready(function(){
-	var token = "d19c018fac18507f87dfe1265295cdbc";
-	var info = {"token": token};
+var token = "d19c018fac18507f87dfe1265295cdbc";
+var info = {"token": token};
+
+function needle(info){
 	$.post("http://challenge.code2040.org/api/haystack", info, function(data){
 		for(var i = 0; i < data.haystack.length; i++){
 			if(data.needle == data.haystack[i]){
@@ -9,6 +10,7 @@ $(document).ready(function(){
 				$.post("http://challenge.code2040.org/api/haystack/validate", returnInfo);
 			}
 		}
-
 	});
-});
+}
+
+needle(info);

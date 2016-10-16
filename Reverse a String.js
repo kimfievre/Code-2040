@@ -1,15 +1,16 @@
-$(document).ready(function(){
-	var token = "d19c018fac18507f87dfe1265295cdbc";
-	var info = {"token": token};
+var token = "d19c018fac18507f87dfe1265295cdbc";
+var info = {"token": token};
 
+function reverse(data){
+	return data.split("").reverse().join("");
+}
+
+function reverseAString(info){
 	$.post("http://challenge.code2040.org/api/reverse", info, function(data){
-		function reverse(data){
-    		return data.split("").reverse().join("");
-		}
-		var string = reverse(data);
-		var returnInfo = {"token": token, "string": string};
-		$.post("http://challenge.code2040.org/api/reverse/validate", returnInfo);
-	});
+			var string = reverse(data);
+			var returnInfo = {"token": token, "string": string};
+			$.post("http://challenge.code2040.org/api/reverse/validate", returnInfo);
+		});
+}
 
-});
-
+reverseAString(info);
